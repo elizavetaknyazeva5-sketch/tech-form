@@ -3,16 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flow Design — Цифровые решения для B2B</title>
+<title>Tech Form — Цифровые решения для B2B</title>
 <meta name="description" content="Разработка корпоративных сайтов и цифровых платформ для промышленных предприятий, логистики и B2B-компаний.">
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* ================= БАЗА ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container {
+  width: 1200px;
+  max-width: 92%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 90px 0;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* ================= КНОПКИ ================= */
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #333;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 15px;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  background: #f5f7f9;
+}
+
+.hero-grid {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ================= МЕТРИКИ ================= */
+
+.metrics {
+  background: #111;
+  color: #fff;
+}
+
+.metrics-grid {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  gap: 40px;
+}
+
+.metric h2 {
+  color: #fff;
+}
+
+.metric p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* ================= ПОДХОД ================= */
+
+.approach-grid {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.approach img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.approach ul {
+  list-style: none;
+}
+
+.approach li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.approach li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+}
+
+/* ================= ТАБЛИЦА ================= */
+
+.calculation-table {
+  margin-top: 30px;
+  background: #fafafa;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+.calculation-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calculation-table th,
+.calculation-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+/* ================= КЕЙСЫ ================= */
+
+.cases-grid {
+  display: flex;
+  gap: 40px;
+}
+
+.case img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* ================= ЭТАПЫ ================= */
+
+.stages {
+  background: #f5f7f9;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stage {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #eee;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.cta h2 {
+  color: #fff;
+}
+
+.cta p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+/* ================= АДАПТИВ ================= */
+
+@media (max-width: 992px) {
+
+  .hero-grid,
+  .metrics-grid,
+  .approach-grid,
+  .cases-grid {
+    flex-direction: column;
+  }
+
+  .stages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
   <div class="container">
-    <div class="logo">Flow Design</div>
+    <div class="logo">Tech Form</div>
     <nav>
       <a href="#services">Услуги</a>
       <a href="#cases">Кейсы</a>
@@ -27,10 +320,8 @@
     <div class="hero-text">
       <h1>Создание сайтов и цифровых сервисов для B2B, интегрированных в бизнес-цели компании</h1>
       <p>Разрабатываем корпоративные платформы для промышленных предприятий, логистики и строительных компаний.</p>
-      <div class="hero-buttons">
-        <a href="#contacts" class="btn-primary">Начать сотрудничество</a>
-        <a href="#cases" class="btn-secondary">Посмотреть результаты</a>
-      </div>
+      <a href="#contacts" class="btn-primary">Начать сотрудничество</a>
+      <a href="#cases" class="btn-secondary">Посмотреть результаты</a>
     </div>
     <div class="hero-image">
       <img src="images/hero.jpg" alt="Корпоративный сайт">
@@ -46,7 +337,7 @@
     </div>
     <div class="metric">
       <h2>20–40%</h2>
-      <p>Рост конверсии сайта за счёт продуманной структуры</p>
+      <p>Рост конверсии сайта</p>
     </div>
     <div class="metric">
       <h2>30–80</h2>
@@ -54,92 +345,7 @@
     </div>
     <div class="metric">
       <h2>до 300%</h2>
-      <p>ROI инвестиций в сайт в течение первого года</p>
-    </div>
-  </div>
-</section>
-
-<section id="approach" class="approach">
-  <div class="container">
-    <h2>Подход к работе</h2>
-    <div class="approach-grid">
-      <div>
-        <img src="images/approach.jpg" alt="Подход">
-      </div>
-      <div>
-        <ul>
-          <li>Анализ текущих бизнес-процессов и целей компании</li>
-          <li>Формирование архитектуры сайта под отдел продаж</li>
-          <li>Разработка UX/UI с учётом B2B-аудитории</li>
-          <li>Интеграция CRM и аналитики</li>
-          <li>Запуск и сопровождение проекта</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="calculation">
-  <div class="container">
-    <h2>Как формируется стоимость проекта</h2>
-    <p>Стоимость определяется на основе объёма работ, количества страниц, уровня интеграции с CRM и требований к аналитике.</p>
-    <div class="calculation-table">
-      <table>
-        <tr>
-          <th>Этап</th>
-          <th>Описание</th>
-        </tr>
-        <tr>
-          <td>Аналитика</td>
-          <td>Исследование рынка и формирование структуры</td>
-        </tr>
-        <tr>
-          <td>Дизайн</td>
-          <td>UX/UI-концепция и адаптивная верстка</td>
-        </tr>
-        <tr>
-          <td>Разработка</td>
-          <td>Программирование и интеграции</td>
-        </tr>
-        <tr>
-          <td>Запуск</td>
-          <td>Тестирование и ввод в эксплуатацию</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section id="cases" class="cases">
-  <div class="container">
-    <h2>Кейсы в отрасли строительства и промышленности</h2>
-    <div class="cases-grid">
-      <div class="case">
-        <img src="images/case1.jpg" alt="Кейс 1">
-        <p>Строительная компания — увеличение конверсии на 32%</p>
-      </div>
-      <div class="case">
-        <img src="images/case2.jpg" alt="Кейс 2">
-        <p>Производственное предприятие — снижение CPL на 24%</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="stages">
-  <div class="container">
-    <h2>Этапы работы</h2>
-    <div class="stages-grid">
-      <div class="stage">01 / Анализ и формирование требований</div>
-      <div class="stage">02 / Разработка структуры и прототипа</div>
-      <div class="stage">03 / UX/UI дизайн</div>
-      <div class="stage">04 / Верстка и программирование</div>
-      <div class="stage">05 / Интеграция CRM</div>
-      <div class="stage">06 / Настройка аналитики</div>
-      <div class="stage">07 / Тестирование</div>
-      <div class="stage">08 / Запуск проекта</div>
-      <div class="stage">09 / Обучение сотрудников</div>
-      <div class="stage">10 / Сопровождение</div>
+      <p>ROI инвестиций</p>
     </div>
   </div>
 </section>
@@ -154,7 +360,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2025 Flow Design. Все права защищены.</p>
+    <p>© 2026 Tech Form. Все права защищены.</p>
   </div>
 </footer>
 
