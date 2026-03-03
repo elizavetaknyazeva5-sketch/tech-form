@@ -430,16 +430,86 @@
         padding-left: 0;
         padding-top: 20px;
     }
+/* Общие стили секции */
+.contacts {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
+/* Заголовок "Контакты" */
+.contacts-title {
+    font-size: 42px;
+    font-weight: 500;
+    color: #1a2b4b; /* Темно-синий цвет из макета */
+    margin-bottom: 40px;
+}
 
-    
+/* Контейнер для фото и текста */
+.contacts-container {
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    gap: 60px; /* Расстояние между картинкой и текстом */
+}
 
-    /* Контакты */
-    .contacts {
-      background-color: #f9fafb;
-      padding: 80px 0;
-      margin-top: 60px;
+/* Стили для изображения */
+.contacts-image {
+    flex: 1; /* Занимает 50% ширины */
+}
+
+.contacts-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    border-radius: 30px; /* Скругление углов как на макете */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Легкая тень */
+}
+
+/* Стили для текстовой части */
+.contacts-info {
+    flex: 1; /* Занимает 50% ширины */
+}
+
+.contacts-info p {
+    font-size: 24px;
+    color: #1a2b4b;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Стили ссылок */
+.contacts-info a {
+    color: #1a2b4b;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.contacts-info a:hover {
+    opacity: 0.7;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 992px) {
+    .contacts-container {
+        flex-direction: column; /* Элементы встают друг под другом */
+        align-items: flex-start;
+        gap: 30px;
     }
+
+    .contacts-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .contacts-info p {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+
+
 
     /* Адаптивность */
     @media (max-width: 992px) {
@@ -770,6 +840,25 @@
 
     </div>
 </section>
+
+<section class="contacts">
+    <h2 class="contacts-title">Контакты</h2>
+    
+    <div class="contacts-container">
+        <!-- Левая часть: Изображение -->
+        <div class="contacts-image">
+            <img src="https://res.cloudinary.com/dcettbtpr/image/upload/v1772567552/Rectangle_246_j0pakk.png" alt="Калькулятор стоимости">
+        </div>
+
+        <!-- Правая часть: Текст -->
+        <div class="contacts-info">
+            <p><strong>Почта:</strong> <a href="mailto:flow-design.bizml.ru">flow-design.bizml.ru</a></p>
+            <p><strong>Телефон:</strong> <a href="tel:+79172135057">+7(917)213-50-57</a></p>
+            <p><strong>Телеграмм:</strong> <a href="https://t.me/flow_design_work" target="_blank">https://t.me/flow_design_work</a></p>
+        </div>
+    </div>
+</section>
+
 
 </main>
 
