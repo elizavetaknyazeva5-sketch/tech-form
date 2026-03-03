@@ -509,7 +509,144 @@
     }
 }
 
+.main-footer {
+    background-color: #1a2b4b; /* Основной темно-синий цвет из макета */
+    color: #ffffff;
+    padding: 60px 0 0 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
 
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr; /* Три колонки разной ширины */
+    gap: 50px;
+}
+
+/* Стили заголовков в футере */
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: #82a18e; /* Акцентный зеленый из блока этапов */
+}
+
+/* Блок бренда */
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-logo span {
+    color: #82a18e; /* Выделение части логотипа */
+}
+
+.footer-description {
+    line-height: 1.6;
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+/* Навигационные ссылки */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    color: #82a18e;
+    padding-left: 5px;
+}
+
+/* Соцсети */
+.social-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #82a18e;
+    color: #1a2b4b !important;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.social-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Нижняя часть (копирайт) */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.legal-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Адаптивность для планшетов и телефонов */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Все в одну колонку */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .legal-links a {
+        margin: 0 10px;
+    }
+}
 
     /* Адаптивность */
     @media (max-width: 992px) {
@@ -862,14 +999,50 @@
 
 </main>
 
-<footer class="contacts">
-  <div class="container">
-    <h2>Контакты</h2>
-    <p>Почта: <a href="mailto:flow-design.bizml.ru">flow-design.bizml.ru</a></p>
-    <p>Телефон: <a href="tel:+79172135057">+7 (917) 213-50-57</a></p>
-    <p>Telegram: <a href="https://t.me/flowdesignwork" target="blank">@flowdesign_work</a></p>
-  </div>
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Блок 1: Логотип и описание -->
+        <div class="footer-section brand">
+            <h2 class="footer-logo">Пром<span>Строй</span></h2>
+            <p class="footer-description">
+                Проектирование и строительство промышленных объектов любой сложности под ключ.
+            </p>
+        </div>
+
+        <!-- Блок 2: Навигация -->
+        <div class="footer-section links">
+            <h3>Навигация</h3>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Решения</a></li>
+                <li><a href="#">Калькулятор</a></li>
+                <li><a href="#">Как мы работаем</a></li>
+                <li><a href="#">Гарантии</a></li>
+            </ul>
+        </div>
+
+        <!-- Блок 3: Контакты -->
+        <div class="footer-section contacts-footer">
+            <h3>Свяжитесь с нами</h3>
+            <p>Email: <a href="mailto:flow-design.bizml.ru">flow-design.bizml.ru</a></p>
+            <p>Тел: <a href="tel:+79172135057">+7 (917) 213-50-57</a></p>
+            <div class="social-links">
+                <a href="https://t.me/flow_design_work" class="social-btn">Telegram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Нижняя полоса: Копирайт -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <p>&copy; 2023-2024 ПромСтрой. Все права защищены.</p>
+            <div class="legal-links">
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
 </footer>
+
 
 </body>
 </html>
