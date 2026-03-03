@@ -254,7 +254,91 @@
     margin: 0;
     max-width: 450px;
 }
+.price-calc-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #1a2b4b;
+}
+
+/* Обертка для таблицы с прокруткой на мобилках */
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    border: 1px solid #d1d1d1;
+}
+
+.google-sheet-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background-color: #fff;
+}
+
+/* Стили заголовков (буквы A, B, C) */
+.sheet-letters th {
+    background-color: #f8f9fa;
+    border: 1px solid #d1d1d1;
+    color: #777;
+    font-weight: normal;
+    padding: 4px;
+    text-align: center;
+}
+
+/* Номера строк слева */
+.row-number {
+    background-color: #f8f9fa;
+    border: 1px solid #d1d1d1;
+    color: #777;
+    text-align: center;
+    width: 30px;
+}
+
+/* Основные ячейки */
+.google-sheet-table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px 12px;
+    vertical-align: middle;
+}
+
+/* Первая строка с заголовками этапов */
+.header-row td {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Пустая строка */
+.empty-row td {
+    height: 20px;
+}
+
+/* Строки с итогами */
+.total-row td {
+    background-color: #fff;
+}
+
+/* Нижний текст */
+.description {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #334155;
+    max-width: 700px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .title {
+        font-size: 22px;
+    }
+    .description {
+        font-size: 16px;
+    }
+}
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .content-container {
@@ -416,6 +500,107 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="price-calc-section">
+        <h2 class="title">Как мы рассчитываем стоимость проекта</h2>
+
+        <div class="table-wrapper">
+            <table class="google-sheet-table">
+                <thead>
+                    <tr class="sheet-letters">
+                        <th class="row-number"></th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="header-row">
+                        <td class="row-number">1</td>
+                        <td>Этап</td>
+                        <td>Точный срок выполнения, кол-во рабочих дней</td>
+                        <td>Стоимость в руб (не в зависимости от способа оплаты)</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">2</td>
+                        <td>Подсчет текущих финансовых и маркетинговых показателей компании</td>
+                        <td>1 дн</td>
+                        <td>бесплатно</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">3</td>
+                        <td>Анализ конкурентов, их сегментация и критерии оценки</td>
+                        <td>4 дн</td>
+                        <td>7600</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">4</td>
+                        <td>Анализ целевой аудитории, проведение опроса</td>
+                        <td>1 нед</td>
+                        <td>16700</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">5</td>
+                        <td>CJM-клиентский путь к покупке</td>
+                        <td>1 нед</td>
+                        <td>19900</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">6</td>
+                        <td>Техническое задание, карта многостраничного сайта (9 страниц)</td>
+                        <td>2 дн</td>
+                        <td>3500 (за карту сайта)</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">7</td>
+                        <td>Дизайн-макет сайта (6 страниц), интерактивные элементы (кнопки)</td>
+                        <td>1 нед</td>
+                        <td>20 700</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">8</td>
+                        <td>Разработка сайта</td>
+                        <td>5 дн</td>
+                        <td>30 000 (5000 - 1 страница)</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">9</td>
+                        <td>Подключение метрики и аналитики</td>
+                        <td>1 дн</td>
+                        <td>бесплатно</td>
+                    </tr>
+                    <tr>
+                        <td class="row-number">10</td>
+                        <td>Контекстная реклама Яндекс директ - 30 дней</td>
+                        <td>2 дн - настройка рекламы</td>
+                        <td>26 250 (не входило в стоимость разработки)</td>
+                    </tr>
+                    <tr class="empty-row">
+                        <td class="row-number">11</td>
+                        <td></td>
+                      <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td class="row-number">12</td>
+                        <td><strong>Итог за разработку:</strong></td>
+                        <td><strong>4 нед</strong></td>
+                        <td><strong>98 400</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td class="row-number">13</td>
+                        <td><strong>С учетом рекламы:</strong></td>
+                        <td><strong>4 нед и 2 дня</strong></td>
+                        <td><strong>124 650</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="description">
+            Составляем таблицу по расчету стоимости, сроков поэтапно с учетом всех дополнительных расходов. 
+            Пример такой таблицы приведен выше из кейса "Промстрой".
+        </p>
     </section>
 </main>
 
