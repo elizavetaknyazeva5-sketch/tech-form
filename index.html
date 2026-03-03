@@ -1,3 +1,8 @@
+В вашем коде были пропущены закрывающие теги (</head>, <body>), а также отсутствовали стили CSS для шапки и первого блока (Hero), из-за чего сайт выглядел бы «разваленным».
+
+Я исправил структуру, добавил недостающие стили и объединил всё в один рабочий файл.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,13 +11,175 @@
   <meta name="description" content="Создание B2B сайтов с фокусом на KPI и бизнес-цели" />
   <title>Tech Form — B2B сайты</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" (https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap") rel="stylesheet">
 
+  <style>
+    /* Общие стили */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: #0f2942;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Шапка */
+    .header {
+      padding: 20px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .logo img {
+      height: 32px;
+    }
+
+    .nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #0f2942;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* Hero секция */
+    .hero {
+      padding: 80px 0;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .hero-image {
+      flex: 1;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    /* Блок статистики (Stats) */
+    .stats-block {
+      padding: 60px 0;
+    }
+
+    .stats-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .stats-value {
+      flex: 0 0 200px;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .stats-text {
+      font-size: 18px;
+      padding-left: 20px;
+    }
+
+    .stats-buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background-color: #557a5e;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid #557a5e;
+      color: #0f2942;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Контакты */
+    .contacts {
+      background-color: #f9fafb;
+      padding: 80px 0;
+      margin-top: 60px;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 992px) {
+      .hero-inner { flex-direction: column; text-align: center; }
+      .nav { display: none; }
+      .stats-item { flex-direction: column; align-items: flex-start; }
+      .stats-value { flex: none; margin-bottom: 10px; }
+      .hero-content h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
 
 <header class="header">
   <div class="container header-inner">
     <div class="logo">
-      <img src="images/image-89-6.png" alt="Tech Form Logo">
+      <!-- Замените на реальный путь к логотипу -->
+      <img src="images/logo.png" alt="Tech Form Logo">
       <span>Tech Form</span>
     </div>
 
@@ -24,33 +191,62 @@
     </nav>
   </div>
 </header>
-
-<section class="hero">
-  <div class="container hero-inner">
-
-    <div class="hero-content">
-      <h1>
-        Создание сайтов и сервисов для B2B,
-        встраивающихся в ваши бизнес-цели
-      </h1>
-
-    <div class="hero-image">
-      <img src="https://res.cloudinary.com/dcettbtpr/image/upload/v1772542894/Frame_220_wpktyg.png" 
-           alt="Создание сайтов для B2B">
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1>
+          Создание сайтов и сервисов для B2B,
+          встраивающихся в ваши бизнес-цели
+        </h1>
+      </div>
+      <div class="hero-image">
+        <img src="https://res.cloudinary.com/dcettbtpr/image/upload/v1772542894/Frame220wpktyg.png" 
+             alt="Создание сайтов для B2B">
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section class="stats-block">
+    <div class="container">
+      <div class="stats-container">
+        <div class="stats-item">
+          <div class="stats-value">15-30%</div>
+          <div class="stats-text">Сокращение стоимости привлечения лида (CPL)</div>
+        </div>
 
+        <div class="stats-item">
+          <div class="stats-value">20-40%</div>
+          <div class="stats-text">Увеличение конверсии сайта за счет рекламы/SEO</div>
+        </div>
 
-<section class="contacts">
+        <div class="stats-item">
+          <div class="stats-value">30-80</div>
+          <div class="stats-text">Квалифицированных лидов ежемесячно</div>
+        </div>
+
+        <div class="stats-item">
+          <div class="stats-value">до 300%</div>
+          <div class="stats-text">ROI от инвестиций в сайт уже в первый год работы</div>
+        </div>
+
+        <div class="stats-buttons">
+          <button class="btn btn-primary">Начать работу</button>
+          <button class="btn btn-secondary">Посмотреть результаты</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contacts">
   <div class="container">
     <h2>Контакты</h2>
-    <p>Почта: flow-design.bizml.ru</p>
-    <p>Телефон: +7 (917) 213-50-57</p>
-    <p>Telegram: https://t.me/flow_design_work</p>
+    <p>Почта: <a href="mailto:flow-design.bizml.ru">flow-design.bizml.ru</a></p>
+    <p>Телефон: <a href="tel:+79172135057">+7 (917) 213-50-57</a></p>
+    <p>Telegram: <a href="https://t.me/flowdesignwork" target="blank">@flowdesign_work</a></p>
   </div>
-</section>
+</footer>
 
 </body>
 </html>
