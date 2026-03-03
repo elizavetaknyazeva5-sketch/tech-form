@@ -71,29 +71,89 @@ body {
 /* ============================= */
 /* HERO */
 /* ============================= */
-
-.hero {
+/* Стили секции B2B */
+.b2b-promo {
     padding: 80px 0;
+    background-color: #ffffff; /* Чистый белый фон для акцента на контенте */
+    text-align: center; /* Центрируем и текст, и картинку */
 }
 
-.hero-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.hero-content h1 {
-    font-size: 42px;
-    line-height: 1.2;
+/* Стили заголовка */
+.b2b-title {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 56px; /* Крупный, уверенный шрифт */
     font-weight: 700;
+    line-height: 1.2;
+    color: #1a2b4b; /* Наш основной темно-синий цвет */
+    margin-bottom: 50px; /* Отступ до картинки */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero-image img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 20px;
+/* Выделение части заголовка цветом */
+.b2b-title span {
+    color: #82a18e; /* Акцентный приглушенный зеленый */
 }
+
+/* Контейнер для изображения */
+.b2b-visual {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Добавляем легкую анимацию появления */
+    animation: fadeInUp 1s ease-out;
+}
+
+.b2b-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px; /* Мягкое скругление углов */
+    /* Эффект парения (по желанию) */
+    filter: drop-shadow(0 20px 40px rgba(26, 43, 75, 0.1));
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность для планшетов и мобильных */
+@media (max-width: 992px) {
+    .b2b-title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .b2b-promo {
+        padding: 50px 0;
+    }
+    
+    .b2b-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .b2b-visual {
+        max-width: 100%;
+    }
+}
+
 
 /* ============================= */
 /* BUTTONS */
@@ -584,20 +644,20 @@ body {
   </div>
 </header>
 <main>
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <h1>
-          Создание сайтов и сервисов для B2B,
-          встраивающихся в ваши бизнес-цели
+  <section class="b2b-promo">
+    <div class="container">
+        <!-- Заголовок блока -->
+        <h1 class="b2b-title">
+            Создание сайтов и сервисов для B2B, <br> 
+            <span>встраивающихся в ваши бизнес-цели</span>
         </h1>
-      </div>
-      <div class="hero-image">
-        <img src="https://res.cloudinary.com/dcettbtpr/image/upload/v1772542894/Frame_220_wpktyg.png" 
-             alt="Создание сайтов для B2B">
-      </div>
+        
+        <!-- Изображение под заголовком -->
+        <div class="b2b-visual">
+            <img src="https://res.cloudinary.com/dcettbtpr/image/upload/v1772542894/Frame_220_wpktyg.png" alt="B2B решения">
+        </div>
     </div>
-  </section>
+</section>
 
   <section class="stats-block">
     <div class="container">
