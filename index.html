@@ -486,7 +486,83 @@ body {
         text-align: center;
     }
 }
+.contacts {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
+/* Заголовок "Контакты" */
+.contacts-title {
+    font-size: 42px;
+    font-weight: 500;
+    color: #1a2b4b; /* Темно-синий цвет из макета */
+    margin-bottom: 40px;
+}
+
+/* Контейнер для фото и текста */
+.contacts-container {
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+    gap: 60px; /* Расстояние между картинкой и текстом */
+}
+
+/* Стили для изображения */
+.contacts-image {
+    flex: 1; /* Занимает 50% ширины */
+}
+
+.contacts-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    border-radius: 30px; /* Скругление углов как на макете */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Легкая тень */
+}
+
+/* Стили для текстовой части */
+.contacts-info {
+    flex: 1; /* Занимает 50% ширины */
+}
+
+.contacts-info p {
+    font-size: 24px;
+    color: #1a2b4b;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Стили ссылок */
+.contacts-info a {
+    color: #1a2b4b;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.contacts-info a:hover {
+    opacity: 0.7;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 992px) {
+    .contacts-container {
+        flex-direction: column; /* Элементы встают друг под другом */
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .contacts-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .contacts-info p {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
 </style>
 </head>
 <body>
