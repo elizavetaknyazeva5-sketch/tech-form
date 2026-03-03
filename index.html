@@ -196,6 +196,83 @@
       font-weight: 500;
       margin-top: 5px;
     }
+    
+.approach-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+/* Контейнер для двух колонок */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Стили левой стороны */
+.image-side {
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid #e0e0e0; /* Разделительная линия как на макете */
+    padding-right: 40px;
+}
+
+.image-wrapper {
+    width: 100%;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Так как исходное фото содержит и текст, и картинку, 
+       в реальном проекте здесь был бы сложный коллаж из div-ов. 
+       Здесь мы отображаем левую часть вашего кадра */
+    object-fit: cover;
+}
+
+/* Стили правой стороны */
+.text-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    gap: 45px; /* Отступы между блоками текста */
+}
+
+.text-item p {
+    font-size: 18px;
+    margin: 0;
+    max-width: 450px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-side {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+    
+    .text-side {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
 
     
 
@@ -305,6 +382,41 @@
 
   </div>
 </section>
+<section class="approach-section">
+        <h1 class="main-title">Подход к работе</h1>
+        
+        <div class="content-container">
+            <!-- Левая колонка с визуализацией (используем ваше изображение) -->
+            <div class="image-side">
+                <div class="image-wrapper">
+                    <img src="https://res.cloudinary.com/dcettbtpr/image/upload/v1772564915/Frame_213_sbsipi.png" alt="Визуализация подхода">
+                </div>
+            </div>
+
+            <!-- Правая колонка с текстом -->
+            <div class="text-side">
+                <div class="text-item">
+                    <p>Сокращаем цикл сделки на 10-15% еще до первого звонка.</p>
+                </div>
+                
+                <div class="text-item">
+                    <p>Заводим таблицу расчета стоимости и сроков</p>
+                </div>
+                
+                <div class="text-item">
+                    <p>Учитываем ваши KPI и бизнес-цели, финансовые и маркетинговые показатели: встраиваем в них сайт, грамотно распределяя бюджет и сроки работы.</p>
+                </div>
+                
+                <div class="text-item">
+                    <p>Встраиваем сайты в бизнес-стратегию</p>
+                </div>
+                
+                <div class="text-item">
+                    <p>С 40+ часов исследований решаем скрытые запросы ваших клиентов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer class="contacts">
