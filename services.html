@@ -1,5 +1,149 @@
 <!DOCTYPE html>
 <html lang="ru">
+    • {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Шапка и меню */
+.header {
+    background-color: #54715a; /* Темно-зеленый из макета */
+    padding: 10px 0;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 40px;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Заголовки секций */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+/* Карточка услуги */
+.service-card {
+    background-color: #e9e9e9; /* Светло-серый фон карточки */
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Левая часть - Заглушка под фото */
+.card-image {
+    flex: 1;
+    background-color: #d1d1d1;
+    border-radius: 20px;
+    min-height: 250px;
+}
+
+/* Правая часть - Контент */
+.card-content {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Белые блоки внутри карточки */
+.content-block {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 15px;
+}
+
+.title-block h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info-block {
+    font-size: 14px;
+    color: #555;
+}
+
+.info-block ul {
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.info-block li {
+    margin-bottom: 5px;
+}
+
+/* Блок цены */
+.price-block {
+    margin-top: auto; /* Прижимает цену к низу */
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .service-card {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none; /* Скрываем меню на маленьких экранах для упрощения */
+    }
+    
+    .card-image {
+        min-height: 200px;
+    }
+}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
